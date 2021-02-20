@@ -1,0 +1,43 @@
+{
+  "name": "endpayjs",
+  "version": "1.0.0",
+  "description": "Implementación de la API REST de EndPay",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "eslint": "eslint --ext .js src/",
+    "eslint:fix": "eslint --fix --ext .js src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/endpay/endpay-node.git"
+  },
+  "keywords": [
+    "endpay",
+    "webpay",
+    "onepay",
+    "node",
+    "chile",
+    "pagos"
+  ],
+  "author": "Sebastián Iturra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/endpay/endpay-node/issues"
+  },
+  "homepage": "https://github.com/endpay/endpay-node#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "crypto": "^1.0.1",
+    "qs": "^6.9.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1"
+  }
+}
