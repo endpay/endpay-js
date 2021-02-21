@@ -1,25 +1,20 @@
 const axios = require('axios')
-const crypto = require('crypto')
 const qs = require('qs')
 
 class Wrapper {
-  constructor ({ commerceId, secretKey, timeout }) {
+  constructor ({ baseURL, commerceId, secretKey, timeout }) {
     const apiVersion = '1.0'
-    const baseURL = `https://api.miu.cl/api/${apiVersion}`
+    const url = `https://api.miu.cl/api/${apiVersion}`
     this.commerceId = commerceId
     this.secretKey = secretKey
 
     this.axiosInstance = axios.create({
-      baseURL,
+      baseURL: baseURL || url,
       timeout: timeout || 5000
     })
 
     this.setResponseInterceptors()
     this.setRequestInterceptors()
-  }
-
-  setAuthorization (authToken) {
-    this.axiosInstance.defaults.headers.common.Authorization = authToken
   }
 
   setResponseInterceptors () {
@@ -29,24 +24,12 @@ class Wrapper {
       },
       async error => {
         if (error.isAxiosError) {
-          return Promise.reject(new Error(error.response.data.message))
+          return Promise.reject(new Error(error.response.data.error))
         }
 
         return Promise.reject(new Error(error.message))
       }
     )
-  }
-
-  generateHash ({ config }) {
-    const { method, url, baseURL, data } = config
-    const completeURL = `${baseURL}${url}`
-    let toSign = `${method.toUpperCase()}&${encodeURIComponent(completeURL)}`
-
-    if (data) {
-      toSign += `&${data}`
-    }
-
-    return crypto.createHmac('sha256', this.secretKey).update(toSign).digest('hex')
   }
 
   setRequestInterceptors () {
@@ -55,7 +38,8 @@ class Wrapper {
         config.data = this.updateData(config)
       }
 
-      config.headers.common.Authorization = this.getHash({ config })
+      config.headers.common['x-api-key'] = this.secretKey
+      config.headers.common['x-commerce-id'] = this.commerceId
 
       return config
     })
@@ -70,12 +54,6 @@ class Wrapper {
     result = qs.stringify(result)
 
     return result
-  }
-
-  getHash ({ config }) {
-    const hash = this.generateHash({ config })
-
-    return `${this.commerceId}:${hash}`
   }
 }
 

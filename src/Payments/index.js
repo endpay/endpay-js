@@ -8,7 +8,7 @@ class Payment {
   }
 
   create (params) {
-    return this.axiosInstance.post('/payments', params)
+    return this.axiosInstance.post('/payments/create', params)
   }
 
   delete (id) {
