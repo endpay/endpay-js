@@ -43,7 +43,6 @@ const endPay = new EndPay({
 endPay.payments
   .create({
     subject: 'First Product',
-    currency: 'CLP',
     amount: '1000'
   })
   .then(response => {})
