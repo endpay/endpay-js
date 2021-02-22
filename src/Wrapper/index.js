@@ -2,11 +2,11 @@ const axios = require('axios')
 const qs = require('qs')
 
 class Wrapper {
-  constructor ({ baseURL, commerceId, secretKey, timeout }) {
+  constructor ({ baseURL, commerceId, apiKey, timeout }) {
     const apiVersion = '1.0'
     const url = `https://api.miu.cl/api/${apiVersion}`
     this.commerceId = commerceId
-    this.secretKey = secretKey
+    this.apiKey = apiKey
 
     this.axiosInstance = axios.create({
       baseURL: baseURL || url,
@@ -38,7 +38,7 @@ class Wrapper {
         config.data = this.updateData(config)
       }
 
-      config.headers.common['x-api-key'] = this.secretKey
+      config.headers.common['x-api-key'] = this.apiKey
       config.headers.common['x-commerce-id'] = this.commerceId
 
       return config

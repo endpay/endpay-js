@@ -27,11 +27,15 @@ yarn add endpayjs
 Make sure you have created your free account on [EndPay](https://endpay.cl) and that you have your **Credentials**.
 
 ```javascript
-import EndPay from 'endpayjs'
+// CommonJS
+const EndPay = require('endpay');
+
+// ES6 / Typescript
+import EndPay from 'endpay'
 
 const endPay = new EndPay({
   commerceId: 'COMMERCE_ID',
-  secretKey: 'YOUR_SECRET_KEY'
+  apiKey: 'YOUR_API_KEY'
 })
 ```
 
