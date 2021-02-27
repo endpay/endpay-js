@@ -2,11 +2,11 @@
 
 ## Complete documentation
 
-This library is an implementation made in javascript of the [EndPay API](https://endpay.cl), it is incomplete and only contemplates functionalities that will be used by banks and payments, if you want to add the rest, do it without problems.
+This library is an implementation made in javascript of the [EndPay API](http://api-docs.endpay.cl/)
 
 ## Support Version
 
-Current support [EndPay API](https://endpay.cl/page/api) version 1.0 
+Current support [EndPay API](http://api-docs.endpay.cl/) version 1.0 
 
 ### Install
 
