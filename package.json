@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/endpay/endpay-node.git"
+    "url": "git+https://github.com/endpay/endpay-js.git"
   },
   "keywords": [
     "endpay",
@@ -25,9 +25,9 @@
   "author": "Sebastián Iturra",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/endpay/endpay-node/issues"
+    "url": "https://github.com/endpay/endpay-js/issues"
   },
-  "homepage": "https://github.com/endpay/endpay-node#readme",
+  "homepage": "https://github.com/endpay/endpay-js#readme",
   "dependencies": {
     "axios": "^0.21.0",
     "crypto": "^1.0.1",
