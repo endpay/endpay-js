@@ -12,12 +12,12 @@ Current support [EndPay API](https://endpay.cl/page/api) version 1.0
 
 Npm:
 ```bash
-npm install --save endpayjs
+npm install --save endpay
 ```
 
 Yarn: 
 ```bash
-yarn add endpayjs
+yarn add endpay
 ```
 
 ## Getting started

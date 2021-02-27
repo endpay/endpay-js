@@ -1,5 +1,5 @@
 {
-  "name": "endpayjs",
+  "name": "endpay",
   "version": "1.0.0",
   "description": "Implementación de la API REST de EndPay",
   "main": "index.js",

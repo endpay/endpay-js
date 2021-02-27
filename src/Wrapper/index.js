@@ -4,7 +4,7 @@ const qs = require('qs')
 class Wrapper {
   constructor ({ baseURL, commerceId, apiKey, timeout }) {
     const apiVersion = '1.0'
-    const url = `https://api.miu.cl/api/${apiVersion}`
+    const url = `https://api.endpay.cl/${apiVersion}`
     this.commerceId = commerceId
     this.apiKey = apiKey
 
