@@ -1,7 +1,7 @@
 {
   "name": "endpay",
   "version": "1.1.0",
-  "description": "Implementación de la API REST de EndPay",
+  "description": "Implementación de la API REST de EndPay en JavaScript",
   "main": "index.js",
   "scripts": {
     "eslint": "eslint --ext .js src/",
