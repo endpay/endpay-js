@@ -4,16 +4,16 @@ class Payment {
   }
 
   read (id) {
-    return this.axiosInstance.get(`/payments/${id}`)
+    return this.axiosInstance.get(`/payments/read/${id}`)
   }
 
   create (params) {
     return this.axiosInstance.post('/payments/create', params)
   }
 
-  delete (id) {
+/*  delete (id) {
     return this.axiosInstance.delete(`/payments/${id}`)
-  }
+  }*/
 }
 
 module.exports = Payment
