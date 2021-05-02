@@ -61,12 +61,3 @@ endPay.payments
   .then(response => {})
   .catch(error => console.log(error)) // Handle the error.
 ```
-
-#### Delete payment
-
-```javascript
-endPay.payments
-  .delete(paymentId)
-  .then(response => {})
-  .catch(error => console.log(error)) // Handle the error.
-```
